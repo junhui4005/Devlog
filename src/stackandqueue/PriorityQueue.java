@@ -41,8 +41,8 @@ public class PriorityQueue {
             int left = index * 2 + 1;
             int right = index * 2 + 2;
             int smallest = index;
-            if (left < size && heap[left] < heap[smallest]) { smallest = left; }
-            if (right < size && heap[right] < heap[smallest]) { smallest = right; }
+            if (left < size && heap[left] < heap[smallest]) { smallest = left; } // 왼쪽 자식이 있고, 왼쪽 자식이 현재보다 작으면
+            if (right < size && heap[right] < heap[smallest]) { smallest = right; } // 오른쪽 자식도 있고, 오른쪽 자식이 현재보다 작으면
             if (smallest == index) { break;}
 
             int temp = heap[index];
@@ -86,11 +86,11 @@ public class PriorityQueue {
         PriorityQueue priorityQueue = new PriorityQueue(5);
         priorityQueue.offer(3);
         priorityQueue.offer(2);
-        priorityQueue.print();
+        priorityQueue.print(); //Priority Queue: [2, 3]
         priorityQueue.offer(1);
-        priorityQueue.print();
+        priorityQueue.print(); // Priority Queue: [1, 3, 2]
         priorityQueue.poll();
-        priorityQueue.print();
-        System.out.println("peek: " + priorityQueue.peek());
+        priorityQueue.print(); //Priority Queue: [2, 3]
+        System.out.println("peek: " + priorityQueue.peek()); //peek: 2
     }
 }
