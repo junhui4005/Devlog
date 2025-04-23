@@ -1,4 +1,4 @@
-package src.tree;
+package src.cs.tree;
 
 // 이진트리구조 예제
 public class BinaryTreeExample{

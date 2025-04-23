@@ -1,4 +1,4 @@
-package src.stackandqueue;
+package src.cs.stackandqueue;
 
 import java.util.Arrays;
 

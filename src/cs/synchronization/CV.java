@@ -1,4 +1,4 @@
-package src.synchronization;
+package src.cs.synchronization;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

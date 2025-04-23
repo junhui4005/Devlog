@@ -1,4 +1,4 @@
-package src.synchronization;
+package src.cs.synchronization;
 
 import java.util.ArrayList;
 import java.util.List;

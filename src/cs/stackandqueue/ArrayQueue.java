@@ -1,4 +1,4 @@
-package src.stackandqueue;
+package src.cs.stackandqueue;
 
 // 큐를 배열로 구현한 코드
 public class ArrayQueue {

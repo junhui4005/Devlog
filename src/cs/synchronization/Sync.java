@@ -1,4 +1,4 @@
-package src.synchronization;
+package src.cs.synchronization;
 
 // Synchronized 동기화 클래스. Counter 클래스 연계
 public class Sync {

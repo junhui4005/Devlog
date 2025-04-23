@@ -1,13 +1,8 @@
-package src.synchronization;
+package src.cs.synchronization;
 
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
-// 뮤텍스 락을 이용한 동기화 클래스
-public class Mutex {
-    static int sharedData = 0;
-    static Lock lock = new ReentrantLock();
-
+// 레이스 컨디션 발생 클래스
+public class Race {
+    static int sharedData = 0; // 공유 데이터
     public static void main(String[] args) {
         Thread thread1 = new Thread(new Increment());
         Thread thread2 = new Thread(new Decrement());
@@ -22,18 +17,13 @@ public class Mutex {
             e.printStackTrace();
         }
         // 최종 공유 데이터 값 출력
-        System.out.println("Final value of sharedData: "+sharedData); // Final value of sharedData: 0
+        System.out.println("Final value of sharedData: "+sharedData); // Final value of sharedData: -20863
     }
 
     static class Increment implements Runnable {
         public void run() {
             for(int i = 0; i < 100000; i++){
-                lock.lock(); // 락 획득
-                try{
-                    sharedData++; // 공유데이터 증가
-                } finally {
-                    lock.unlock(); // 락 해제
-                }
+                sharedData++; // 공유데이터 증가
             }
         }
     }
@@ -41,12 +31,7 @@ public class Mutex {
     static class Decrement implements Runnable {
         public void run() {
             for(int i = 0; i < 100000; i++){
-                lock.lock(); // 락 획득
-                try{
-                    sharedData--; // 공유데이터 감소
-                } finally {
-                    lock.unlock(); // 락 해제
-                }
+                sharedData--; // 공유데이터 감소
             }
         }
     }

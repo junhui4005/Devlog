@@ -1,11 +1,12 @@
-package src.synchronization;
+package src.cs.synchronization;
 
-import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
-// 세마포를 이용한 동기화 클래스
-public class Sem {
+// 뮤텍스 락을 이용한 동기화 클래스
+public class Mutex {
     static int sharedData = 0;
-    static Semaphore semaphore = new Semaphore(1); // 세마포 생성, 공유 자원 1개
+    static Lock lock = new ReentrantLock();
 
     public static void main(String[] args) {
         Thread thread1 = new Thread(new Increment());
@@ -27,13 +28,11 @@ public class Sem {
     static class Increment implements Runnable {
         public void run() {
             for(int i = 0; i < 100000; i++){
+                lock.lock(); // 락 획득
                 try{
-                    semaphore.acquire(); //세마포 획득
                     sharedData++; // 공유데이터 증가
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 } finally {
-                    semaphore.release(); // 세마포 해제
+                    lock.unlock(); // 락 해제
                 }
             }
         }
@@ -42,13 +41,11 @@ public class Sem {
     static class Decrement implements Runnable {
         public void run() {
             for(int i = 0; i < 100000; i++){
+                lock.lock(); // 락 획득
                 try{
-                    semaphore.acquire(); //세마포 획득
                     sharedData--; // 공유데이터 감소
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 } finally {
-                    semaphore.release(); // 세마포 해제
+                    lock.unlock(); // 락 해제
                 }
             }
         }
