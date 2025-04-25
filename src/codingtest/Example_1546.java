@@ -2,7 +2,7 @@ package src.codingtest;
 
 import java.util.Scanner;
 
-// 
+//
 public class Example_1546 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -19,5 +19,7 @@ public class Example_1546 {
            sum += b[i];
        }
        System.out.println(sum*100/max/a);
+
+
     }
 }
