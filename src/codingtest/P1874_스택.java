@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 // 스택으로 오름차순 수열 만들기
-public class Example_1874 {
+public class P1874_스택 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();

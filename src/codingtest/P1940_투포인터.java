@@ -2,11 +2,10 @@ package src.codingtest;
 
 import java.io.*;
 import java.util.Arrays;
-import java.util.Scanner;
 import java.util.StringTokenizer;
 
 // 투 포인터
-public class Example_1940 {
+public class P1940_투포인터 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

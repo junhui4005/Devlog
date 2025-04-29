@@ -1,13 +1,11 @@
 package src.codingtest;
 
-import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
-import java.util.Stack;
 
 // 큐를 이용한 카드 게임
-public class Example_2164 {
+public class P2164_큐 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Queue<Integer> q = new LinkedList<>();

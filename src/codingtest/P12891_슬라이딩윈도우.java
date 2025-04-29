@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 // 슬라이딩 윈도우
-public class Example_12891 {
+public class P12891_슬라이딩윈도우 {
 
     static int [] checkArr ;
     static int [] myArr;

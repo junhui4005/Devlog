@@ -3,7 +3,7 @@ package src.codingtest;
 import java.util.Scanner;
 
 // 투 포인터
-public class Example_2018 {
+public class P2018_투포인터 {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         int N = scanner.nextInt();
