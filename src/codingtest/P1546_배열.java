@@ -3,7 +3,7 @@ package src.codingtest;
 import java.util.Scanner;
 
 //
-public class Example_1546 {
+public class P1546_배열 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();

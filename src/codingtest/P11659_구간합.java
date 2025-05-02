@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Example_11659 {
+public class P11659_구간합 {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in)); // 속도가 더 빠름
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine()); // 문자열이 길 경우 사용

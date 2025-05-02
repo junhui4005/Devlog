@@ -2,7 +2,7 @@ package src.codingtest;
 
 import java.util.Scanner;
 
-public class Example_11720 {
+public class P11720_배열과리스트 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
