@@ -33,11 +33,16 @@ public class P1753_다익스트라 {
             graph[u].add(new Node(v,w));
         }
 
+
         dist = new int[V + 1];
         Arrays.fill(dist, INF);
         dist[K] = 0;
 
+        System.out.println(Arrays.toString(graph));
+        System.out.println(Arrays.toString(dist));
+
         total(K);
+
 
         for(int i = 1; i <= V; i++){
             if(dist[i] == INF){
@@ -59,6 +64,14 @@ public class P1753_다익스트라 {
         public int compareTo(Node o) {
             return this.distance - o.distance;
         }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "index=" + index +
+                    ", distance=" + distance +
+                    '}';
+        }
     }
 
     static void total(int K){
@@ -68,6 +81,7 @@ public class P1753_다익스트라 {
             Node node = pq.poll();
             int now = node.index;
             int cost = node.distance;
+            System.out.println(now + " " + dist[now]+ " "+ cost);
             if(dist[now] < cost){
                 continue;
             }
@@ -75,6 +89,7 @@ public class P1753_다익스트라 {
                 int totalCost = dist[now] + n.distance;
                 if(totalCost < dist[n.index]){
                     dist[n.index] = totalCost;
+                    System.out.println("now: "+now + " " + dist[n.index]+ " "+ cost);
                     pq.offer(new Node(n.index,totalCost));
                 }
             }
