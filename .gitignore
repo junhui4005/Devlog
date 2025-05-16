@@ -11,7 +11,14 @@ out/
 .settings
 .springBeans
 .sts4-cache
+.idea
+.tmp
+caches
+daemon
+native
+out
 bin/
+wrapper
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
